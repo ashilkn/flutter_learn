@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       key: ValueKey("Placeholder"),
     ),
     Container(
+      key: const ValueKey("Container"),
       width: 300,
       height: 100,
       color: Colors.blue,
@@ -52,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // key: UniqueKey(),
     ),
     Container(
+      key: const ValueKey("Container"),
       width: 200,
       height: 120,
       color: Colors.green,
