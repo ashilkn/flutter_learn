@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:archive/archive_io.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,58 +11,86 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final listA = [
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+      // key: UniqueKey(),
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+      // key: UniqueKey(),
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+      // key: UniqueKey(),
+    ),
+  ];
+  final listB = [
+    Container(
+      width: 120,
+      height: 100,
+      color: Colors.red,
+      // key: UniqueKey(),
+    ),
+    Container(
+      width: 120,
+      height: 100,
+      color: Colors.green,
+      // key: UniqueKey(),
+    ),
+    Container(
+      width: 120,
+      height: 100,
+      color: Colors.blue,
+      // key: UniqueKey(),
+    ),
+  ];
+  List<Widget> listWidgets = [];
   bool value = false;
 
   @override
   Widget build(BuildContext context) {
+    if (listWidgets.isEmpty) {
+      listWidgets = listA;
+    }
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          value
-              ? const SizedBox(key: ValueKey("sizedBox"))
-              : const Placeholder(
-                  key: ValueKey("placeholder"),
-                ),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                value = !value;
-              });
-            },
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
+      body: Center(
+        child: Column(
+          children: [
+            ...listWidgets,
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  listWidgets = listWidgets == listA ? listB : listA;
+                });
+              },
+              child: const Text("Swap"),
             ),
-          ),
-          !value
-              ? const SizedBox(
-                  key: ValueKey("sizedBox"),
-                )
-              : const Placeholder(key: ValueKey("placeholder")),
-        ],
+          ],
+        ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
