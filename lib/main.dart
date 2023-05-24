@@ -35,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // key: UniqueKey(),
     ),
     Container(
-      key: const ValueKey("Container"),
       width: 200,
       height: 100,
       color: Colors.green,
@@ -56,18 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // key: UniqueKey(),
     ),
     Container(
-      key: const ValueKey("Container"),
       width: 200,
       height: 120,
       color: Colors.green,
       // key: UniqueKey(),
     ),
-    Container(
-      width: 300,
-      height: 120,
-      color: Colors.blue,
-      // key: UniqueKey(),
-    ),
+    const Placeholder(),
   ];
   List<Widget> listWidgets = [];
   bool value = false;
