@@ -34,12 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       color: Colors.red,
       // key: UniqueKey(),
     ),
-    Container(
-      width: 200,
-      height: 100,
-      color: Colors.green,
-      // key: UniqueKey(),
-    ),
+    const Placeholder(),
     Container(
       width: 300,
       height: 100,
