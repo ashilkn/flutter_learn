@@ -35,13 +35,14 @@ class _MyHomePageState extends State<MyHomePage> {
       // key: UniqueKey(),
     ),
     Container(
-      width: 100,
+      key: const ValueKey("Container"),
+      width: 200,
       height: 100,
       color: Colors.green,
       // key: UniqueKey(),
     ),
     Container(
-      width: 100,
+      width: 300,
       height: 100,
       color: Colors.blue,
       // key: UniqueKey(),
@@ -49,20 +50,20 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   final listB = [
     Container(
-      width: 120,
-      height: 100,
+      width: 100,
+      height: 120,
       color: Colors.red,
       // key: UniqueKey(),
     ),
     Container(
-      width: 120,
-      height: 100,
+      width: 200,
+      height: 120,
       color: Colors.green,
       // key: UniqueKey(),
     ),
     Container(
-      width: 120,
-      height: 100,
+      width: 300,
+      height: 120,
       color: Colors.blue,
       // key: UniqueKey(),
     ),
