@@ -1,12 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class StatelessColorContainer1 extends StatelessWidget {
-  StatelessColorContainer1({super.key});
-
-  final color =
-      Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+  final Color color;
+  const StatelessColorContainer1(this.color, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +16,8 @@ class StatelessColorContainer1 extends StatelessWidget {
 }
 
 class StatelessColorContainer2 extends StatelessWidget {
-  StatelessColorContainer2({super.key});
-
-  final color =
-      Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+  final Color color;
+  const StatelessColorContainer2(this.color, {super.key});
 
   @override
   Widget build(BuildContext context) {
