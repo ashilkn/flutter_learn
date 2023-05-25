@@ -11,8 +11,12 @@ class StatefulColorContainer1 extends StatefulWidget {
 }
 
 class _StatefulColorContainer1State extends State<StatefulColorContainer1> {
-  Color getRandomColor() {
-    return Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+  late final Color color;
+
+  @override
+  void initState() {
+    color = Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+    super.initState();
   }
 
   @override
@@ -20,7 +24,7 @@ class _StatefulColorContainer1State extends State<StatefulColorContainer1> {
     return Container(
       width: 100,
       height: 100,
-      color: getRandomColor(),
+      color: color,
     );
   }
 }
@@ -34,8 +38,12 @@ class StatefulColorContainer2 extends StatefulWidget {
 }
 
 class _StatefulColorContainer2State extends State<StatefulColorContainer2> {
-  Color getRandomColor() {
-    return Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+  late final Color color;
+
+  @override
+  void initState() {
+    color = Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+    super.initState();
   }
 
   @override
@@ -44,7 +52,7 @@ class _StatefulColorContainer2State extends State<StatefulColorContainer2> {
       // key: const ValueKey("green"),
       width: 100,
       height: 100,
-      color: getRandomColor(),
+      color: color,
     );
   }
 }

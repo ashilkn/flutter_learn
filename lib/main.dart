@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rad_flutter/stateless_widgets.dart';
+import 'package:rad_flutter/stateful_widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,14 +29,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Widget> listWidgets = [
-    const StatelessColorContainer1(
-      Colors.teal,
-      key: ValueKey("Container1"),
-    ),
-    const StatelessColorContainer2(
-      Colors.cyan,
-      key: ValueKey("Container2"),
-    ),
+    const StatefulColorContainer1(),
+    const StatefulColorContainer2(),
   ];
 
   void swap() {
