@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rad_flutter/stateless_widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,60 +28,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final listA = [
-    Container(
-      width: 100,
-      height: 100,
-      color: Colors.red,
-      // key: UniqueKey(),
-    ),
-    const Placeholder(
-      key: ValueKey("Placeholder"),
-    ),
-    Container(
-      key: const ValueKey("Container"),
-      width: 300,
-      height: 100,
-      color: Colors.blue,
-      // key: UniqueKey(),
-    ),
+  List<Widget> listWidgets = [
+    const StatelessColorContainer1(),
+    const StatelessColorContainer2(),
   ];
-  final listB = [
-    Container(
-      width: 100,
-      height: 120,
-      color: Colors.red,
-      // key: UniqueKey(),
-    ),
-    Container(
-      key: const ValueKey("Container"),
-      width: 200,
-      height: 120,
-      color: Colors.green,
-      // key: UniqueKey(),
-    ),
-    const Placeholder(
-      key: ValueKey("Placeholder"),
-    ),
-  ];
-  List<Widget> listWidgets = [];
-  bool value = false;
+
+  void swap() {
+    setState(() {
+      listWidgets.insert(0, listWidgets.removeAt(1));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    if (listWidgets.isEmpty) {
-      listWidgets = listA;
-    }
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Test"),
+      ),
       body: Center(
         child: Column(
           children: [
             ...listWidgets,
             ElevatedButton(
               onPressed: () {
-                setState(() {
-                  listWidgets = listWidgets == listA ? listB : listA;
-                });
+                swap();
               },
               child: const Text("Swap"),
             ),
