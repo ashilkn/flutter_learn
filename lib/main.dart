@@ -29,8 +29,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Widget> listWidgets = [
-    const StatelessColorContainer1(),
-    const StatelessColorContainer2(),
+    StatelessColorContainer1(),
+    StatelessColorContainer2(),
   ];
 
   void swap() {
